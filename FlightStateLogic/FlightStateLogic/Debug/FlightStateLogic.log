@@ -1,4 +1,0 @@
-﻿  main.cpp
-c:\users\mason\documents\github\alp\flightstatelogic\flightstatelogic\main.cpp(30): warning C4244: '=': conversion from 'double' to 'unsigned long', possible loss of data
-c:\users\mason\documents\github\alp\flightstatelogic\flightstatelogic\main.cpp(192): warning C4244: 'initializing': conversion from 'float' to 'unsigned long', possible loss of data
-  FlightStateLogic.vcxproj -> C:\Users\Mason\Documents\GitHub\ALP\FlightStateLogic\Debug\FlightStateLogic.exe

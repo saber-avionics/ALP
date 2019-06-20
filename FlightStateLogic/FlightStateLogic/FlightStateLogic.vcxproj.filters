@@ -13,26 +13,47 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\drivers">
+      <UniqueIdentifier>{6347fa3c-c7cd-4fae-a299-8b98193a9b26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\drivers">
+      <UniqueIdentifier>{be34e0ac-e4ec-40c5-bc28-874fa57fec7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\drivers\pressure.h">
+      <Filter>Header Files\drivers</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\drivers\AirTemp.h">
+      <Filter>Header Files\drivers</Filter>
     </ClInclude>
-    <ClInclude Include="adafruitMCP9808.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="include\drivers\altitude.h">
+      <Filter>Header Files\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\BatteryTemp.h">
+      <Filter>Header Files\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\vectornav.h">
+      <Filter>Header Files\drivers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="source\drivers\AirTemp.cpp">
+      <Filter>Source Files\drivers</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="source\drivers\altitude.cpp">
+      <Filter>Source Files\drivers</Filter>
     </ClCompile>
-    <ClCompile Include="adafruitMCP9808.cpp">
+    <ClCompile Include="source\drivers\BatteryTemp.cpp">
+      <Filter>Source Files\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drivers\pressure.cpp">
+      <Filter>Source Files\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drivers\vectornav.cpp">
+      <Filter>Source Files\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
