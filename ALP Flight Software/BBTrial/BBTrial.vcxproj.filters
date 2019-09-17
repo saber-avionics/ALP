@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="source\drivers\AirTemp.cpp">
+      <Filter>source\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drivers\altitude.cpp">
+      <Filter>source\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drivers\FlightStates.cpp">
+      <Filter>source\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drivers\Mechanical.cpp">
+      <Filter>source\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drivers\pressure.cpp">
+      <Filter>source\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drivers\UART.cpp">
+      <Filter>source\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\attitude.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\benchmark.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\compositedata.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\conversions.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\criticalsection.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\dllvalidator.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\error_detection.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\event.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\ezasyncdata.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\memoryport.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\packet.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\packetfinder.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\port.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\position.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\searcher.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\sensors.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\serialport.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\thread.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\types.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\util.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\utilities.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="source\vn\vntime.cpp">
+      <Filter>source\vn</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorNav.cpp">
+      <Filter>source\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drivers\BatteryTemp.cpp">
+      <Filter>source\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{687e20fc-9f68-4816-b461-86e497124280}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{01ca6885-e945-453d-8c4b-db6c4b8a4610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\drivers">
+      <UniqueIdentifier>{b34585ca-c6c1-4165-9570-aa70a82fddec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\drivers">
+      <UniqueIdentifier>{d0497aae-6a30-4cc8-8faa-f009ff0c444f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\vn">
+      <UniqueIdentifier>{7c24dbd6-0c51-444f-9c04-0903a872aa67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\vn">
+      <UniqueIdentifier>{62725764-92d1-41c7-b04e-18e885b75def}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\delay.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\targetver.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\AirTemp.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\altitude.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\FlightStates.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\Mechanical.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\pressure.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\UART.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\vectornav.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\attitude.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\boostpython.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\compiler.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\compositedata.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\consts.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\conversions.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\criticalsection.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\dllvalidator.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\error_detection.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\event.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\exceptions.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\export.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\ezasyncdata.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\int.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\matrix.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\memoryport.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\mock.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\nocopy.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\packet.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\packetfinder.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\port.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\position.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\registers.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\searcher.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\sensors.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\serialport.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\signal.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\thread.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\types.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\util.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\utilities.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\vector.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vn\vntime.h">
+      <Filter>include\vn</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\BatteryTemp.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
