@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef _VECTORNAV_H
 #define _VECTORNAV_H
 
