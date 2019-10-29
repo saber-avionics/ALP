@@ -6,21 +6,35 @@
 #include <iostream>
 #include <math.h>
 
-//uint32_t getAltitude(uint32_t initial, uint32_t pressure);
+using namespace std;
 
-float getAltitude(uint32_t initial, uint32_t pressure, float temperature) {
-	//printf("Initial Pressure = %lu\n", initial);
+float initialAltitude;
+
+float getAltitude(uint32_t pressure, float temperature) {
+	uint32_t seaLevelPressure = 101325; //Pascals
 	//printf("pressure = %lu \n", pressure);
 	//printf("temperature = %li \n", TEMP/100);
-	//float altitude = (((287.058 * (((float)(TEMP)/100)+273.15)/9.8))*log((float)initial/get_pressure())*3.28);	Not this one, this one's bad
-	float altitude = (pow(((initial/100)/(pressure/100)),(1/5.257))-1)*((temperature/100)+273.15)/.0065; //This is now right, just gotta use the thermistor
-	//uint32_t altitude = ((float)initial - (float)pressure) / (1.225f * 9.81f);
+	float altitude = (pow(((seaLevelPressure/100)/(pressure/100)),(1/5.257))-1)*((temperature/100)+273.15)/.0065; //Hypsometric formula, only good up to 11km
 	//printf("altitude = %f \n", (float)altitude);
 	return altitude;
 }
 
-void altCal() {
-	//Calibrate the Altitude
+//Calibrate the Altitude
+void altCal(uint32_t pressure, float temperature) {
+	float initAltArray[10] = {};
+	float initAltTemp;
+	float initAltSum = 0;
+	for (uint8_t i = 0; i < 10;) {
+		initAltTemp = getAltitude(pressure, temperature);
+		if ((initAltTemp >= 0) && (initAltTemp <= 2000)) {
+			initAltArray[i] = initAltTemp;
+			initAltSum = initAltSum + initAltArray[i];
+			i++;
+		}
+	}
+	initialAltitude = initAltSum / 10;
+	cout << "Initial Altitude: " << initialAltitude << endl;
+	
 }
 
 float getVelocity(float altitude) {
