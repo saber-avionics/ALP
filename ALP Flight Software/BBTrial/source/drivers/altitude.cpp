@@ -16,6 +16,14 @@ float getAltitude(uint32_t pressure, float temperature) {
 	//printf("temperature = %li \n", TEMP/100);
 	float altitude = (pow(((seaLevelPressure/100)/(pressure/100)),(1/5.257))-1)*((temperature/100)+273.15)/.0065; //Hypsometric formula, only good up to 11km
 	//printf("altitude = %f \n", (float)altitude);
+	//H = R* × TM / (Mo × go')
+		//R* = 8314.4621 J/kmol-K (universal gas constant)
+		//TM = T × Mo / M
+			//T = Kinetic Temperature (?)	
+			//Mo = weight @ Sea Level
+			//M = Molecular weight of air
+		//go' = 9.80665 m2/(s2m')
+		
 	return altitude;
 }
 

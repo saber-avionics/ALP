@@ -89,6 +89,7 @@
     <ClCompile Include="source\drivers\FlightStates.cpp" />
     <ClCompile Include="source\drivers\Mechanical.cpp" />
     <ClCompile Include="source\drivers\pressure.cpp" />
+    <ClCompile Include="source\drivers\SparkFun_I2C_GPS_Arduino_Library.cpp" />
     <ClCompile Include="source\drivers\UART.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\vn\attitude.cpp" />
@@ -123,6 +124,7 @@
     <ClInclude Include="include\drivers\FlightStates.h" />
     <ClInclude Include="include\drivers\Mechanical.h" />
     <ClInclude Include="include\drivers\pressure.h" />
+    <ClInclude Include="include\drivers\SparkFun_I2C_GPS_Arduino_Library.h" />
     <ClInclude Include="include\drivers\UART.h" />
     <ClInclude Include="include\drivers\vectornav.h" />
     <ClInclude Include="include\targetver.h" />
