@@ -1,8 +1,8 @@
-#include <iostream>
-#include <stdint.h>
-
 #ifndef _MECHANICAL_H
 #define _MECHANICAL_H
+
+#include <iostream>
+#include <stdint.h>
 
 class Mechanical {
 public:

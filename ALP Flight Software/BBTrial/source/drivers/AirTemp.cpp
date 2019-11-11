@@ -1,6 +1,6 @@
 #include <stdint.h>
 //#include "stdafx.h"
-#include "drivers\AirTemp.h"
+#include "drivers/AirTemp.h"
 
 int32_t adcInit(void) {
 	int32_t adcReading = 0;

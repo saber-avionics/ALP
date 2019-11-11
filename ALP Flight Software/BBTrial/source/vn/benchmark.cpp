@@ -3,7 +3,7 @@
 #include <tchar.h>
 
 #endif
-
+/*
 #include <stdio.h>
 #include <iostream>
 
@@ -24,3 +24,4 @@ int main(int argc, char* argv[])
 	// Execute based on the selected mode.
 	return runner.Run();
 }
+*/

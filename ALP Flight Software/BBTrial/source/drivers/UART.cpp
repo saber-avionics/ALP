@@ -1,5 +1,6 @@
 #include <iostream>
-#include "drivers\UART.h"
+#include "drivers/UART.h"
+
 using namespace std;
 
 string getCommand() {

@@ -3,9 +3,10 @@
 
 #include <stdint.h>
 #include <iostream>
+#include <math.h>
 
 enum flightState { UNARMED, STANDBY, ASCENT, FLOATING, DESCENT, LANDING };
-flightState myFS = UNARMED;
+
 
 class States {
 public:

@@ -1,11 +1,13 @@
 #include <stdint.h>
-#include <iostream>
-#include "drivers\FlightStates.h"
-#include "drivers\Mechanical.h"
+
+#include "drivers/FlightStates.h"
+#include "drivers/Mechanical.h"
 
 using namespace std;
 
 Mechanical mech;
+
+flightState myFS = UNARMED;
 
 void States::unarmed() {
 	myFS = UNARMED;
@@ -49,7 +51,7 @@ bool States::descent(float velocity, float gForce, bool parachuteDeployed, float
 		return parachuteDeployed;
 	}
 
-	if (abs(velocity) <= 5 && gForce < .05) {
+	if (abs((int16_t)velocity) <= 5 && gForce < .05) {
 		cout << "Entering LANDING" << endl;
 		myFS = LANDING;
 	}

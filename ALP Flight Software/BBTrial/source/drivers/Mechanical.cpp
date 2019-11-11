@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdint.h>
-#include "drivers\Mechanical.h"
+#include "drivers/Mechanical.h"
 
 void Mechanical::arm() {
 	//Arm the ALP
