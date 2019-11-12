@@ -97,6 +97,9 @@
     <ClCompile Include="source\drivers\SparkFun_I2C_GPS_Arduino_Library.cpp">
       <Filter>source\drivers</Filter>
     </ClCompile>
+    <ClCompile Include="source\drivers\TinyGPS++.cpp">
+      <Filter>source\drivers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">
@@ -249,6 +252,9 @@
       <Filter>include\drivers</Filter>
     </ClInclude>
     <ClInclude Include="include\drivers\SparkFun_I2C_GPS_Arduino_Library.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\TinyGPS++.h">
       <Filter>include\drivers</Filter>
     </ClInclude>
   </ItemGroup>

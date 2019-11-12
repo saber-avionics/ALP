@@ -13,7 +13,7 @@ public:
 	//void whichState(flightState newState);
 	void unarmed();
 	void standby(float smoothAltitude, float initialAltitude);
-	void ascent(float velocity);
+	void ascent(float velocity, float smoothAltitude, float initialAltitude);
 	void floating(float velocity);
 	bool descent(float velocity, float gForce, bool parachuteDeployed, float altitude);
 	void landing();

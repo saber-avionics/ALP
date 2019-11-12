@@ -23,9 +23,13 @@ void States::standby(float smoothAltitude, float initialAltitude) {
 	}
 }
 
-void States::ascent(float velocity) {
+void States::ascent(float velocity, float smoothAltitude, float initialAltitude) {
 	myFS = ASCENT;
 	//Perform Ascent Operations
+	if ((smoothAltitude - initialAltitude) >= 15000 && abs((int16_t)velocity) <= 5) {
+		cout << "Entering FLOATING" << endl;
+		myFS = FLOATING;
+	}
 	
 }
 

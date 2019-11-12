@@ -44,7 +44,8 @@ int main()
 	pressure = 0;//getPressure();
 	initialPressure = 0;
 	//float initialAltitude = getAltitude(pressure, airTemp);
-	float altitude = 0;
+	float baroAltitude = 0;
+	double gpsAltitude = 0;
 	float velocity = 0;
 	double smoothing_factor = 0.50;
 	float smoothAltitude = 0;
@@ -97,9 +98,9 @@ int main()
 		pressure = 0;
 		//batteryTemp = tempC.readTempC();
 		airTemp = getTemperature();
-		altitude = getAltitude(pressure, airTemp);
-		smoothAltitude = (smoothing_factor * altitude + (1 - smoothing_factor)*smoothAltitude);
-		velocity = getVelocity(altitude);
+		baroAltitude = getBaroAltitude(pressure, airTemp);
+		smoothAltitude = (smoothing_factor * baroAltitude + (1 - smoothing_factor)*smoothAltitude);
+		velocity = getVelocity(baroAltitude);
 		smoothVelocity = (smoothing_factor * velocity + (1 - smoothing_factor)*smoothVelocity);
 		cout << "hello there" << endl;
 		//delay(1000);
@@ -120,7 +121,7 @@ int main()
 		case ASCENT:
 			//Here we go!
 			cout << "ASCENT" << endl;
-			states.ascent(smoothVelocity);
+			states.ascent(smoothVelocity,baroAltitude,initialAltitude);
 			break;
 		case FLOATING:
 			//I can see my house from here.

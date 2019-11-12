@@ -10,7 +10,7 @@ using namespace std;
 
 float initialAltitude;
 
-float getAltitude(uint32_t pressure, float temperature) {
+float getBaroAltitude(uint32_t pressure, float temperature) {
 	uint32_t seaLevelPressure = 101325; //Pascals
 	//printf("pressure = %lu \n", pressure);
 	//printf("temperature = %li \n", TEMP/100);
@@ -33,7 +33,7 @@ void altCal(uint32_t pressure, float temperature) {
 	float initAltTemp;
 	float initAltSum = 0;
 	for (uint8_t i = 0; i < 10;) {
-		initAltTemp = getAltitude(pressure, temperature);
+		initAltTemp = getBaroAltitude(pressure, temperature);
 		if ((initAltTemp >= 0) && (initAltTemp <= 2000)) {
 			initAltArray[i] = initAltTemp;
 			initAltSum = initAltSum + initAltArray[i];
