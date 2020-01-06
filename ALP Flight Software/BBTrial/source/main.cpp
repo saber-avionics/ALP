@@ -37,7 +37,7 @@ void executeCommands();
 int main()
 {
 //--Initialize Variables
-	
+	cout << "Beginning ALP Software" << endl;
 	bool parachuteDeployed = false;
 	//float batteryTemp = tempC.readTempC();
 	airTemp = getTemperature();
@@ -51,15 +51,16 @@ int main()
 	float smoothAltitude = 0;
 	float smoothVelocity = 0;
 	float gForce = 0;
-	const string sensorPort = "COM1";				// Windows USB Port
-	//const string SensorPort = "/dev/ttyS1";		// Linux Physical Serial Port
-	//const string SensorPort = "/dev/ttyUSB0";		// Linux USB Port
+	//const string sensorPort = "COM1";				// Windows USB Port
+	//const string sensorPort = "/dev/ttyS1";		// Linux Physical Serial Port
+	const string sensorPort = "/dev/ttyUSB0";		// Linux USB Port
 	const uint32_t sensorBaudrate = 115200;
 	myFS = UNARMED;
 
 	
-
+	
 //--Initialize Classes
+	cout << "Initializing Classes" << endl;
 	//MCP9808 tempC;
 	States states;
 	//Mechanical mech; used globally, not needed here
@@ -70,8 +71,10 @@ int main()
 
 
 //--Initialize Sensors
+	cout << "Initializing Sensors" << endl;
 	//tempC.begin();
-	altCal(pressure, airTemp);
+	//altCal(pressure, airTemp);
+	cout << "yeet" << endl;
 	vs.connect(sensorPort, sensorBaudrate);
 	string modelNumber = vs.readModelNumber();
 	cout << "Model Number: " << modelNumber << endl;
@@ -85,8 +88,8 @@ int main()
 	cout << "Current Magnetic: " << reg.mag << endl;
 	cout << "Current Acceleration: " << reg.accel << endl;
 	cout << "Current Angular Rates: " << reg.gyro << endl;
-	float prestest = cd.pressure();
-	cout << "Pressure: " << prestest << endl;
+	//float prestest = cd.pressure();
+	//cout << "Pressure: " << prestest << endl;		doesn't work yet
 
 //--Initializing Ground Altitude
 
