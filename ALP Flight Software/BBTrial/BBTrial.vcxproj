@@ -87,8 +87,10 @@
     <ClCompile Include="source\drivers\altitude.cpp" />
     <ClCompile Include="source\drivers\BatteryTemp.cpp" />
     <ClCompile Include="source\drivers\FlightStates.cpp" />
+    <ClCompile Include="source\drivers\I2CDevice.cpp" />
     <ClCompile Include="source\drivers\Mechanical.cpp" />
     <ClCompile Include="source\drivers\pressure.cpp" />
+    <ClCompile Include="source\drivers\readLDR.cpp" />
     <ClCompile Include="source\drivers\SparkFun_I2C_GPS_Arduino_Library.cpp" />
     <ClCompile Include="source\drivers\UART.cpp" />
     <ClCompile Include="source\main.cpp" />
@@ -122,6 +124,7 @@
     <ClInclude Include="include\drivers\altitude.h" />
     <ClInclude Include="include\drivers\BatteryTemp.h" />
     <ClInclude Include="include\drivers\FlightStates.h" />
+    <ClInclude Include="include\drivers\I2CDevice.h" />
     <ClInclude Include="include\drivers\Mechanical.h" />
     <ClInclude Include="include\drivers\pressure.h" />
     <ClInclude Include="include\drivers\SparkFun_I2C_GPS_Arduino_Library.h" />

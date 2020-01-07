@@ -37,6 +37,7 @@
 
 #include <stdint.h>
 #include <string>
+#include "drivers/I2CDevice.h"
 
 using namespace std;
 
@@ -48,7 +49,7 @@ using namespace std;
 
 #define I2C_SPEED_STANDARD        100000
 #define I2C_SPEED_FAST            400000
-/*
+
 class I2CGPS {
   public:
 
@@ -86,4 +87,3 @@ class I2CGPS {
     uint8_t _head; //Location of next available spot in the gpsData array. Limited to 255.
     uint8_t _tail; //Location of last spot read from gpsData array. Limited to 255.
 };
-*/

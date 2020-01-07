@@ -36,7 +36,7 @@
 #include "drivers/SparkFun_I2C_GPS_Arduino_Library.h"
 
 using namespace std;
-/*
+
 //Sets up the sensor for constant read
 //Returns false if sensor does not respond
 bool I2CGPS::begin(TwoWire &wirePort, uint32_t i2cSpeed)
@@ -266,4 +266,3 @@ string I2CGPS::createPGCMDpacket(uint16_t packetType, string dataField)
 }
 
 
-*/
