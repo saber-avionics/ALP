@@ -1,3 +1,11 @@
+/* Simple send message example for communicating with the
+*  UART that is connected to a desktop PC.  */
+
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <termios.h>
+#include <string.h>
 #include <iostream>
 #include "drivers/UART.h"
 
@@ -7,15 +15,6 @@ string getCommand() {
 	string theCommand = NULL;
 	return theCommand;
 }
-
-/* Simple send message example for communicating with the
-*  UART that is connected to a desktop PC.  */
-
-#include<stdio.h>
-#include<fcntl.h>
-#include<unistd.h>
-#include<termios.h>
-#include<string.h>
 
 int sendString(int argc, char *argv[]) {
 	int file, count;

@@ -260,5 +260,8 @@
     <ClInclude Include="include\drivers\I2CDevice.h">
       <Filter>include\drivers</Filter>
     </ClInclude>
+    <ClInclude Include="readADC.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

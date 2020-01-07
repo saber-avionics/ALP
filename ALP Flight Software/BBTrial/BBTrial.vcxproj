@@ -164,6 +164,7 @@
     <ClInclude Include="include\vn\utilities.h" />
     <ClInclude Include="include\vn\vector.h" />
     <ClInclude Include="include\vn\vntime.h" />
+    <ClInclude Include="readADC.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
