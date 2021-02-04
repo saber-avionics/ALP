@@ -22,7 +22,7 @@
  * For more details, see http://www.derekmolloy.ie/
  */
 
-#include"I2CDevice.h"
+#include"drivers/I2CDevice.h"
 #include<iostream>
 #include<sstream>
 #include<fcntl.h>
@@ -44,7 +44,7 @@ namespace exploringBB {
  * @param bus The bus number. Usually 0 or 1 on the BBB
  * @param device The device ID on the bus.
  */
-I2CDevice::I2CDevice(unsigned int bus, unsigned int device) {
+I2CDevice::I2CDevice(uint8_t bus, uint8_t device) {
 	this->file=-1;
 	this->bus = bus;
 	this->device = device;

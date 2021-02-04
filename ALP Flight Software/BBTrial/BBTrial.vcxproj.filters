@@ -103,6 +103,12 @@
     <ClCompile Include="source\drivers\readLDR.cpp">
       <Filter>source\drivers</Filter>
     </ClCompile>
+    <ClCompile Include="source\drivers\XA1110.cpp">
+      <Filter>source\drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drivers\TinyGPS++.cpp">
+      <Filter>source\drivers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">
@@ -260,7 +266,13 @@
     <ClInclude Include="include\drivers\I2CDevice.h">
       <Filter>include\drivers</Filter>
     </ClInclude>
-    <ClInclude Include="readADC.h">
+    <ClInclude Include="include\drivers\readADC.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\XA1110.h">
+      <Filter>include\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drivers\TinyGPS++.h">
       <Filter>include\drivers</Filter>
     </ClInclude>
   </ItemGroup>
