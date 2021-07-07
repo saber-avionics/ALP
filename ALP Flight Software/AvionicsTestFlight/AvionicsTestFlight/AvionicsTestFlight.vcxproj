@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{acedcef4-4b68-4990-a896-516bc43f1301}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>AvionicsTestFlight</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{2238F9CD-F817-4ECC-BD14-2524D2669B35}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <IncludePath>$(ProjectDir)\include</IncludePath>
+    <SourcePath>$(ProjectDir)\source</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <IncludePath>$(ProjectDir)\include</IncludePath>
+    <SourcePath>$(ProjectDir)\source</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <IncludePath>$(ProjectDir)\include</IncludePath>
+    <SourcePath>$(ProjectDir)\source</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <IncludePath>$(ProjectDir)\include</IncludePath>
+    <SourcePath>$(ProjectDir)\source</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)\include</IncludePath>
+    <SourcePath>$(ProjectDir)\source</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir)\include</IncludePath>
+    <SourcePath>$(ProjectDir)\source</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <IncludePath>$(ProjectDir)\include</IncludePath>
+    <SourcePath>$(ProjectDir)\source</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <IncludePath>$(ProjectDir)\include</IncludePath>
+    <SourcePath>$(ProjectDir)\source</SourcePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="AvionicsTestFlight.cpp" />
+    <ClCompile Include="source\FlightStates.cpp" />
+    <ClCompile Include="source\vn\attitude.cpp" />
+    <ClCompile Include="source\vn\benchmark.cpp" />
+    <ClCompile Include="source\vn\compositedata.cpp" />
+    <ClCompile Include="source\vn\conversions.cpp" />
+    <ClCompile Include="source\vn\criticalsection.cpp" />
+    <ClCompile Include="source\vn\dllvalidator.cpp" />
+    <ClCompile Include="source\vn\error_detection.cpp" />
+    <ClCompile Include="source\vn\event.cpp" />
+    <ClCompile Include="source\vn\ezasyncdata.cpp" />
+    <ClCompile Include="source\vn\memoryport.cpp" />
+    <ClCompile Include="source\vn\packet.cpp" />
+    <ClCompile Include="source\vn\packetfinder.cpp" />
+    <ClCompile Include="source\vn\port.cpp" />
+    <ClCompile Include="source\vn\position.cpp" />
+    <ClCompile Include="source\vn\searcher.cpp" />
+    <ClCompile Include="source\vn\sensors.cpp" />
+    <ClCompile Include="source\vn\serialport.cpp" />
+    <ClCompile Include="source\vn\thread.cpp" />
+    <ClCompile Include="source\vn\types.cpp" />
+    <ClCompile Include="source\vn\util.cpp" />
+    <ClCompile Include="source\vn\utilities.cpp" />
+    <ClCompile Include="source\vn\vntime.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\FlightStates.h" />
+    <ClInclude Include="include\vn\attitude.h" />
+    <ClInclude Include="include\vn\boostpython.h" />
+    <ClInclude Include="include\vn\compiler.h" />
+    <ClInclude Include="include\vn\compositedata.h" />
+    <ClInclude Include="include\vn\consts.h" />
+    <ClInclude Include="include\vn\conversions.h" />
+    <ClInclude Include="include\vn\criticalsection.h" />
+    <ClInclude Include="include\vn\dllvalidator.h" />
+    <ClInclude Include="include\vn\error_detection.h" />
+    <ClInclude Include="include\vn\event.h" />
+    <ClInclude Include="include\vn\exceptions.h" />
+    <ClInclude Include="include\vn\export.h" />
+    <ClInclude Include="include\vn\ezasyncdata.h" />
+    <ClInclude Include="include\vn\int.h" />
+    <ClInclude Include="include\vn\matrix.h" />
+    <ClInclude Include="include\vn\memoryport.h" />
+    <ClInclude Include="include\vn\mock.h" />
+    <ClInclude Include="include\vn\nocopy.h" />
+    <ClInclude Include="include\vn\packet.h" />
+    <ClInclude Include="include\vn\packetfinder.h" />
+    <ClInclude Include="include\vn\port.h" />
+    <ClInclude Include="include\vn\position.h" />
+    <ClInclude Include="include\vn\registers.h" />
+    <ClInclude Include="include\vn\searcher.h" />
+    <ClInclude Include="include\vn\sensors.h" />
+    <ClInclude Include="include\vn\serialport.h" />
+    <ClInclude Include="include\vn\signal.h" />
+    <ClInclude Include="include\vn\thread.h" />
+    <ClInclude Include="include\vn\types.h" />
+    <ClInclude Include="include\vn\util.h" />
+    <ClInclude Include="include\vn\utilities.h" />
+    <ClInclude Include="include\vn\vector.h" />
+    <ClInclude Include="include\vn\vntime.h" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Link>
+      <LibraryDependencies>pthread</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Link>
+      <LibraryDependencies>pthread</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <Link>
+      <LibraryDependencies>pthread</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <Link>
+      <LibraryDependencies>pthread</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <LibraryDependencies>pthread</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <LibraryDependencies>pthread</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <Link>
+      <LibraryDependencies>pthread</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <Link>
+      <LibraryDependencies>pthread</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
