@@ -24,16 +24,19 @@ using namespace vn::xplat;
 extern float initialAltitude;
 extern flightState myFS;
 
-float airTemp;
-uint32_t pressure;
+float temperature;
+float pressure;
 uint32_t initialPressure;
 
 //void executeCommands();
+double getAltitude(double initialPressure, double currentPressure);
 
 int main()
 {
 	//--Initialize Variables
 	cout << "Beginning ALP Software" << endl;
+	uint16_t packetCount = 0;
+	double missionTime = 0;
 	bool parachuteDeployed = false;
 	//float batteryTemp = tempC.readTempC();
 	pressure = 0;//getPressure();
@@ -68,7 +71,6 @@ int main()
 	cout << "Initializing Sensors" << endl;
 	//tempC.begin();
 	//altCal(pressure, airTemp);
-	cout << "yeet" << endl;
 	vs.connect(sensorPort, sensorBaudrate);
 	string modelNumber = vs.readModelNumber();
 	cout << "Model Number: " << modelNumber << endl;
@@ -82,57 +84,74 @@ int main()
 	cout << "Current Magnetic: " << reg.mag << endl;
 	cout << "Current Acceleration: " << reg.accel << endl;
 	cout << "Current Angular Rates: " << reg.gyro << endl;
-	float prestest = cd.pressure();
-	cout << "Pressure: " << prestest << endl;		//doesn't work yet
+	float presTest = vs.readImuMeasurements().pressure;
+	cout << "Pressure: " << presTest << endl;		//doesn't work yet
 
 //--Initializing Ground Altitude
-
+	//initialAltitude = getAltitude(vs.readImuMeasurements().pressure);
 
 //--Main Loop--------------------------------------------------------------------------------------
 	while (1) {
 		//executeCommands();
 		//------Sensor Measurements
-		pressure = 0;
+		pressure = vs.readImuMeasurements().pressure;
+		temperature = vs.readImuMeasurements().temp;
 		//batteryTemp = tempC.readTempC();
 		//airTemp = getTemperature();
 		//baroAltitude = getBaroAltitude(pressure, airTemp);
-		smoothAltitude = (smoothing_factor * baroAltitude + (1 - smoothing_factor)*smoothAltitude);
+		smoothAltitude = smoothing_factor * baroAltitude + (1 - smoothing_factor)*smoothAltitude;
 		//velocity = getVelocity(baroAltitude);
-		smoothVelocity = (smoothing_factor * velocity + (1 - smoothing_factor)*smoothVelocity);
-		cout << "hello there" << endl;
-		//delay(1000);
+		smoothVelocity = smoothing_factor * velocity + (1 - smoothing_factor)*smoothVelocity;
+		usleep(1000000);
+
+		//Output
+		string packet = "";
+		packet += "UAH SABER Avionics Flight Test";
+		packet += ",";
+		packet += to_string(packetCount);
+		packet += ",";
+		packet += to_string(missionTime);
+		packet += ",";
+		packet += to_string(myFS);
+		packet += ",";
+		packet += to_string(temperature);
+		packet += ",";
+		packet += to_string(pressure);
+		packet += ",";
+		packet += to_string(getAltitude(101.325, pressure));
+		cout << packet << endl;
 
 //------Flight States
 
 		switch (myFS) {
 		case UNARMED:
 			//Just chillin'.
-			cout << "UNARMED" << endl;
+			//cout << "UNARMED" << endl;
 			states.unarmed();
 			break;
 		case STANDBY:
 			//I'M READY!!!
-			cout << "STANDBY" << endl;
+			//cout << "STANDBY" << endl;
 			states.standby(smoothAltitude, initialAltitude);
 			break;
 		case ASCENT:
 			//Here we go!
-			cout << "ASCENT" << endl;
+			//cout << "ASCENT" << endl;
 			states.ascent(smoothVelocity, baroAltitude, initialAltitude);
 			break;
 		case FLOATING:
 			//I can see my house from here.
-			cout << "FLOATING" << endl;
+			//cout << "FLOATING" << endl;
 			states.floating(smoothVelocity);
 			break;
 		case DESCENT:
 			//Down, down, down...
-			cout << "DESCENT" << endl;
+			//cout << "DESCENT" << endl;
 			parachuteDeployed = states.descent(smoothVelocity, gForce, parachuteDeployed, smoothAltitude);
 			break;
 		case LANDING:
 			//Getting kinda lonely, someone come find me.
-			cout << "LANDING" << endl;
+			//cout << "LANDING" << endl;
 			states.landing();
 			break;
 		}
@@ -215,6 +234,12 @@ void executeCommands() {
 	}
 	
 }*/
+
+
+double getAltitude(double initialPressure, double currentPressure) {
+	return 44330.0*(1 - pow((currentPressure / initialPressure), (1 / 5.255)));
+}
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
