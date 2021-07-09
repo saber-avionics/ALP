@@ -36,6 +36,8 @@ int main()
 	//--Initialize Variables
 	cout << "Beginning ALP Software" << endl;
 	uint16_t packetCount = 0;
+	struct timespec timevar;
+	double startTime = 0;
 	double missionTime = 0;
 	bool parachuteDeployed = false;
 	//float batteryTemp = tempC.readTempC();
@@ -45,10 +47,13 @@ int main()
 	float baroAltitude = 0;
 	double gpsAltitude = 0;
 	float velocity = 0;
-	double smoothing_factor = 0.50;
+	double smoothing_factor = 0.90;
 	float smoothAltitude = 0;
+	float smoothAGL = 0;
 	float smoothVelocity = 0;
 	float gForce = 0;
+	vec3f orientation;
+	vec3f acceleration;
 	//const string sensorPort = "COM1";				// Windows USB Port
 	//const string sensorPort = "/dev/ttyS1";		// Linux Physical Serial Port
 	const string sensorPort = "/dev/ttyUSB0";		// Linux USB Port
@@ -87,21 +92,27 @@ int main()
 	float presTest = vs.readImuMeasurements().pressure;
 	cout << "Pressure: " << presTest << endl;		//doesn't work yet
 
-//--Initializing Ground Altitude
-	//initialAltitude = getAltitude(vs.readImuMeasurements().pressure);
+//--Initializing Start Data
+	startTime = clock_gettime(CLOCK_MONOTONIC, &timevar);
+	initialAltitude = getAltitude(101.325, vs.readImuMeasurements().pressure);
 
 //--Main Loop--------------------------------------------------------------------------------------
 	while (1) {
 		//executeCommands();
+		packetCount++;
+		missionTime = clock_gettime(CLOCK_MONOTONIC, &timevar);
 		//------Sensor Measurements
 		pressure = vs.readImuMeasurements().pressure;
 		temperature = vs.readImuMeasurements().temp;
 		//batteryTemp = tempC.readTempC();
 		//airTemp = getTemperature();
 		//baroAltitude = getBaroAltitude(pressure, airTemp);
-		smoothAltitude = smoothing_factor * baroAltitude + (1 - smoothing_factor)*smoothAltitude;
+		smoothAltitude = smoothing_factor * getAltitude(101.325, pressure) + (1 - smoothing_factor)*smoothAltitude;
+		smoothAGL = smoothAltitude - initialAltitude;
 		//velocity = getVelocity(baroAltitude);
 		smoothVelocity = smoothing_factor * velocity + (1 - smoothing_factor)*smoothVelocity;
+		orientation = vs.readYawPitchRoll();
+		acceleration = vs.readImuMeasurements().accel;
 		usleep(1000000);
 
 		//Output
@@ -118,7 +129,11 @@ int main()
 		packet += ",";
 		packet += to_string(pressure);
 		packet += ",";
-		packet += to_string(getAltitude(101.325, pressure));
+		packet += to_string(smoothAGL);
+		packet += ",";
+		packet += to_string(orientation.x) + "," + to_string(orientation.y) + "," + to_string(orientation.z);
+		packet += ",";
+		packet += to_string(acceleration.x) + "," + to_string(acceleration.y) + "," + to_string(acceleration.z);
 		cout << packet << endl;
 
 //------Flight States
