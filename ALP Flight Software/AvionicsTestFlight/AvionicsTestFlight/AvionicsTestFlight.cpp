@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <sys/time.h>
 
 #include "FlightStates.h"
 #include "vn/sensors.h"
@@ -36,9 +37,8 @@ int main()
 	//--Initialize Variables
 	cout << "Beginning ALP Software" << endl;
 	uint16_t packetCount = 0;
-	struct timespec timevar;
-	double startTime = 0;
-	double missionTime = 0;
+	struct timeval startTime, currentTime;
+	long missionTime, seconds, useconds;
 	bool parachuteDeployed = false;
 	//float batteryTemp = tempC.readTempC();
 	pressure = 0;//getPressure();
@@ -58,7 +58,7 @@ int main()
 	//const string sensorPort = "/dev/ttyS1";		// Linux Physical Serial Port
 	const string sensorPort = "/dev/ttyUSB0";		// Linux USB Port
 	const uint32_t sensorBaudrate = 115200;
-	myFS = UNARMED;
+	myFS = STANDBY;
 
 
 
@@ -93,14 +93,25 @@ int main()
 	cout << "Pressure: " << presTest << endl;		//doesn't work yet
 
 //--Initializing Start Data
-	startTime = clock_gettime(CLOCK_MONOTONIC, &timevar);
-	initialAltitude = getAltitude(101.325, vs.readImuMeasurements().pressure);
+	//clock_gettime(CLOCK_MONOTONIC, &startTime);
+	gettimeofday(&startTime,NULL);
+	for (int i = 0; i < 15; i++) {
+		pressure = vs.readImuMeasurements().pressure;
+		smoothAltitude = smoothing_factor * getAltitude(101.325, pressure) + (1 - smoothing_factor)*smoothAltitude;
+		usleep(10000);
+	}
+	initialAltitude = smoothAltitude;
+	cout << "Initial Altitude: " << initialAltitude << endl;
 
 //--Main Loop--------------------------------------------------------------------------------------
 	while (1) {
 		//executeCommands();
 		packetCount++;
-		missionTime = clock_gettime(CLOCK_MONOTONIC, &timevar);
+		//clock_gettime(CLOCK_MONOTONIC, &missionTime);
+		gettimeofday(&currentTime, NULL);
+		seconds = currentTime.tv_sec - startTime.tv_sec;
+		useconds = currentTime.tv_usec - startTime.tv_usec;
+		missionTime = seconds * 1000 + useconds / 1000.0;
 		//------Sensor Measurements
 		pressure = vs.readImuMeasurements().pressure;
 		temperature = vs.readImuMeasurements().temp;
@@ -113,7 +124,7 @@ int main()
 		smoothVelocity = smoothing_factor * velocity + (1 - smoothing_factor)*smoothVelocity;
 		orientation = vs.readYawPitchRoll();
 		acceleration = vs.readImuMeasurements().accel;
-		usleep(1000000);
+		usleep(500000);
 
 		//Output
 		string packet = "";
@@ -121,7 +132,7 @@ int main()
 		packet += ",";
 		packet += to_string(packetCount);
 		packet += ",";
-		packet += to_string(missionTime);
+		packet += to_string(missionTime);// - startTime.tv_nsec * 1000);
 		packet += ",";
 		packet += to_string(myFS);
 		packet += ",";
